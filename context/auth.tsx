@@ -1,8 +1,15 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-type User = {
+export enum UserRole {
+  Admin = "admin",
+  User = "user",
+  Guest = "guest",
+}
+
+export type User = {
   name: string;
   email: string;
+  role: UserRole;
 };
 
 type AuthContextType = {
@@ -30,7 +37,7 @@ export function AuthContextProvider({
     try {
       setIsLoading(true);
       await new Promise((resolve) => setTimeout(resolve, 2000)); // 2 seconds delay
-      setUser({ name: "Beto", email: "beto@beto.io" });
+      setUser({ name: "Beto", email: "beto@beto.io", role: UserRole.User });
     } catch (e) {
       alert("something went wrong");
     } finally {
