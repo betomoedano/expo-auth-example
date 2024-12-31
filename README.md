@@ -2,6 +2,18 @@
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
+## Test on Expo Go
+
+```
+npx uri-scheme open exp://127.0.0.1:8081/--/deeplink/123 --ios
+```
+
+## Test on a development build
+
+```
+npx uri-scheme open rncourseapp2://deeplink/123 --ios
+```
+
 ## Get started
 
 1. Install dependencies

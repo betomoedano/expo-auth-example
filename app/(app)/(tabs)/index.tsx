@@ -5,6 +5,7 @@ import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import {
+  Link,
   useFocusEffect,
   useNavigation,
   useNavigationContainerRef,
@@ -20,7 +21,7 @@ export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <ThemedText type="title">Home</ThemedText>
-      <Button title="navigate" onPress={() => {}} />
+      <Link href={"/"}>Go to deeplink screen</Link>
       <Button title="Sign out" color="red" onPress={() => setUser(undefined)} />
     </View>
   );

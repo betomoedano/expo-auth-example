@@ -12,6 +12,10 @@ import { useEffect } from "react";
 import { ActivityIndicator, View } from "react-native";
 import "react-native-reanimated";
 
+export const unstable_settings = {
+  initialRouteName: "(tabs)",
+};
+
 export default function AppLayout() {
   const { user, loading } = useAuth();
 
@@ -27,6 +31,10 @@ export default function AppLayout() {
   return (
     <Stack>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack.Screen
+        name="deeplink/[deeplink]"
+        options={{ headerShown: true, presentation: "modal" }}
+      />
     </Stack>
   );
 }
