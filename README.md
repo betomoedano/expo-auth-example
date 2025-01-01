@@ -1,6 +1,6 @@
 # Expo Router Auth Example
 
-This is an example for engineers enrolled in the [React Native Course](https://codewithbeto.dev/learn) at [codewithbeto.dev](https://codewithbeto.dev)
+This repository demonstrates how to implement authentication in an Expo Router project. It is designed for engineers enrolled in the [React Native Course](https://codewithbeto.dev/learn) at [codewithbeto.dev](https://codewithbeto.dev)
 
 ## Test on Expo Go
 
