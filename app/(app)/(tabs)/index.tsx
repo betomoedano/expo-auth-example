@@ -20,7 +20,9 @@ export default function HomeScreen() {
   const { setUser } = useAuth();
   return (
     <View style={styles.container}>
-      <ThemedText type="title">Home</ThemedText>
+      <ThemedText type="title" testID="home">
+        Home
+      </ThemedText>
       <Link href={"/"}>Go to deeplink screen</Link>
       <Button title="Sign out" color="red" onPress={() => setUser(undefined)} />
     </View>

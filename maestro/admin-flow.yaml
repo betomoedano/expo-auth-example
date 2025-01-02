@@ -1,0 +1,17 @@
+# appId: host.exp.Exponent # This is the app ID for testing with Expo Go.
+appId: com.betoatexpo.rn-course-app-2 # Development build
+---
+# Launch the app
+- launchApp
+
+# Assert that the "Home" text is visible
+- extendedWaitUntil:
+    visible:
+      id: "home"
+    timeout: 5000 # wait for 5 seconds
+
+- tapOn: "Admin.*" # Admin tab
+- assertVisible: "You don't have access"
+- tapOn: "Become an Admin"
+- assertVisible: "Hello Beto"
+- killApp

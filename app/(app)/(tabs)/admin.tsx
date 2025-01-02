@@ -10,7 +10,7 @@ export default function AdminScreen() {
       <View style={styles.container}>
         <ThemedText>You don't have access</ThemedText>
         <Button
-          title="Become and Admin"
+          title="Become an Admin"
           onPress={() =>
             setUser((prev) => ({ ...prev, role: UserRole.Admin } as User))
           }
