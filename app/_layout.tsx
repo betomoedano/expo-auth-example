@@ -12,6 +12,7 @@ import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { AuthContextProvider } from "@/context/auth";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -35,7 +36,9 @@ export default function RootLayout() {
   return (
     <AuthContextProvider>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <Slot />
+        <GestureHandlerRootView>
+          <Slot />
+        </GestureHandlerRootView>
       </ThemeProvider>
     </AuthContextProvider>
   );

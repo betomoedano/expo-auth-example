@@ -37,6 +37,15 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
+        name="gestures-animations"
+        options={{
+          title: "Gest/Anim",
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={28} name="move.3d" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
         name="explore"
         options={{
           title: "Explore",

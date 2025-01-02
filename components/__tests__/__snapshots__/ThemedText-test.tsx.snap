@@ -19,6 +19,6 @@ exports[`renders correctly 1`] = `
     ]
   }
 >
-  Snapshot test!
+  Snapshot test!!
 </Text>
 `;
