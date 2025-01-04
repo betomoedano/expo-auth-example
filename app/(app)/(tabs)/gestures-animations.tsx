@@ -461,12 +461,15 @@ export default function GesturesAndAnimations() {
   };
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View style={{ flex: 1, padding: 16, gap: 6 }}>
-        <ThemedText type="subtitle">Select an example</ThemedText>
+      <View style={{ flex: 1, gap: 6 }}>
+        <ThemedText type="subtitle" style={{ paddingHorizontal: 16 }}>
+          Select an example
+        </ThemedText>
         <ScrollView
           horizontal
+          showsHorizontalScrollIndicator={false}
           style={{ maxHeight: 50 }}
-          contentContainerStyle={{ gap: 8, marginTop: 3 }}
+          contentContainerStyle={{ gap: 8, marginTop: 3, paddingLeft: 16 }}
         >
           {Object.keys(examples).map((example) => (
             <Button
@@ -478,7 +481,9 @@ export default function GesturesAndAnimations() {
             </Button>
           ))}
         </ScrollView>
-        {examples[selectedExample as keyof typeof examples]}
+        <View style={{ paddingHorizontal: 16, flex: 1 }}>
+          {examples[selectedExample as keyof typeof examples]}
+        </View>
       </View>
     </SafeAreaView>
   );
