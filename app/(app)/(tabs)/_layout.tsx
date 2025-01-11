@@ -48,9 +48,18 @@ export default function TabLayout() {
       <Tabs.Screen
         name="explore"
         options={{
-          title: "Explore",
+          title: "API Routes",
           tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="paperplane.fill" color={color} />
+            <IconSymbol size={28} name="square.2.layers.3d" color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="variables"
+        options={{
+          title: "Env Variables",
+          tabBarIcon: ({ color }) => (
+            <IconSymbol size={28} name="lock" color={color} />
           ),
         }}
       />
@@ -59,7 +68,7 @@ export default function TabLayout() {
         options={{
           title: "Admin",
           tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="paperplane.fill" color={color} />
+            <IconSymbol size={28} name="person" color={color} />
           ),
         }}
       />
