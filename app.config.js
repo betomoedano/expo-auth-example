@@ -1,6 +1,6 @@
 const environment = process.env.NODE_ENV;
 
-const myUrl =
+export const myUrl =
   environment === "development"
     ? "http://localhost:8080/"
     : "https://codewithbeto.dev/";
