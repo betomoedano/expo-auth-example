@@ -15,15 +15,33 @@ import {
   useSegments,
 } from "expo-router";
 import { useAuth } from "@/context/auth";
+import { supabase } from "@/utils/supabase";
 
 export default function HomeScreen() {
   const { setUser } = useAuth();
+
+  async function fetchTodos() {
+    const { data } = (await supabase.from("todos").select("*")) as {
+      data: { text: string; id: number; is_completed: boolean }[];
+    };
+    console.log(data);
+  }
+
+  async function createTodo() {
+    const { status } = await supabase.from("todos").insert([
+      {
+        text: `${Math.random()} New Todo from clien`,
+      },
+    ]);
+    console.log(status);
+  }
   return (
     <View style={styles.container}>
       <ThemedText type="title" testID="home">
-        Home
+        Supabase Todos
       </ThemedText>
-      <Link href={"/"}>Go to deeplink screen</Link>
+      <Button title="Fetch Todos" onPress={fetchTodos} />
+      <Button title="Create Todo" onPress={createTodo} />
       <Button title="Sign out" color="red" onPress={() => setUser(undefined)} />
     </View>
   );
