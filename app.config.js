@@ -3,7 +3,7 @@ const environment = process.env.NODE_ENV;
 export const myUrl =
   environment === "development"
     ? "http://localhost:8080/"
-    : "https://codewithbeto.dev/";
+    : "https://cwb-course-app.expo.app";
 
 export default {
   name: "rn-course-app-2",
@@ -48,5 +48,10 @@ export default {
   ],
   experiments: {
     typedRoutes: true,
+  },
+  extra: {
+    eas: {
+      projectId: "4d527113-4fb8-4f74-a95c-6c70aa9565af",
+    },
   },
 };
