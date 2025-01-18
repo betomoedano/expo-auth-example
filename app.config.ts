@@ -26,7 +26,7 @@ function getEnvironmentValues(): EnvironmentValues {
   }
 
   return {
-    name: "Course App",
+    name: "Course App CWB",
     bundleIdentifier: "com.betoatexpo.rncourseapp2",
     package: "com.betoatexpo.rncourseapp2",
   };
@@ -50,6 +50,9 @@ export default {
   ios: {
     supportsTablet: true,
     bundleIdentifier: getEnvironmentValues().bundleIdentifier,
+    config: {
+      usesNonExemptEncryption: false,
+    },
   },
   android: {
     package: getEnvironmentValues().package,
