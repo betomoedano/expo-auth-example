@@ -2,12 +2,13 @@ const environment = process.env.NODE_ENV;
 
 export const myUrl =
   environment === "development"
-    ? "http://localhost:8080/"
+    ? "http://localhost:8080"
     : "https://cwb-course-app.expo.app";
 
 export default {
   name: "rn-course-app-2",
   slug: "rn-course-app-2",
+  owner: "betoatexpo",
   version: "1.0.0",
   orientation: "portrait",
   icon: "./assets/images/icon.png",
@@ -16,9 +17,10 @@ export default {
   newArchEnabled: true,
   ios: {
     supportsTablet: true,
-    bundleIdentifier: "com.betoatexpo.rn-course-app-2",
+    bundleIdentifier: "com.betoatexpo.rncourseapp2",
   },
   android: {
+    package: "com.betoatexpo.rncourseapp2",
     adaptiveIcon: {
       foregroundImage: "./assets/images/adaptive-icon.png",
       backgroundColor: "#ffffff",
