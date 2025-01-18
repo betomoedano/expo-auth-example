@@ -1,4 +1,36 @@
 const environment = process.env.NODE_ENV;
+const IS_DEV = process.env.APP_VARIANT === "development";
+const IS_PREVIEW = process.env.APP_VARIANT === "preview";
+
+interface EnvironmentValues {
+  name: string;
+  bundleIdentifier: string;
+  package: string;
+}
+
+function getEnvironmentValues(): EnvironmentValues {
+  if (IS_DEV) {
+    return {
+      name: "Course App Dev",
+      bundleIdentifier: "com.betoatexpo.rncourseapp2.dev",
+      package: "com.betoatexpo.rncourseapp2.dev",
+    };
+  }
+
+  if (IS_PREVIEW) {
+    return {
+      name: "Course App Preview",
+      bundleIdentifier: "com.betoatexpo.rncourseapp2.preview",
+      package: "com.betoatexpo.rncourseapp2.preview",
+    };
+  }
+
+  return {
+    name: "Course App",
+    bundleIdentifier: "com.betoatexpo.rncourseapp2",
+    package: "com.betoatexpo.rncourseapp2",
+  };
+}
 
 export const myUrl =
   environment === "development"
@@ -6,7 +38,7 @@ export const myUrl =
     : "https://cwb-course-app.expo.app";
 
 export default {
-  name: "rn-course-app-2",
+  name: getEnvironmentValues().name,
   slug: "rn-course-app-2",
   owner: "betoatexpo",
   version: "1.0.0",
@@ -17,10 +49,10 @@ export default {
   newArchEnabled: true,
   ios: {
     supportsTablet: true,
-    bundleIdentifier: "com.betoatexpo.rncourseapp2",
+    bundleIdentifier: getEnvironmentValues().bundleIdentifier,
   },
   android: {
-    package: "com.betoatexpo.rncourseapp2",
+    package: getEnvironmentValues().package,
     adaptiveIcon: {
       foregroundImage: "./assets/images/adaptive-icon.png",
       backgroundColor: "#ffffff",
