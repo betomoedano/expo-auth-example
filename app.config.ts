@@ -91,4 +91,10 @@ export default {
       projectId: "4d527113-4fb8-4f74-a95c-6c70aa9565af",
     },
   },
+  updates: {
+    url: "https://u.expo.dev/4d527113-4fb8-4f74-a95c-6c70aa9565af",
+  },
+  runtimeVersion: {
+    policy: "appVersion",
+  },
 };
