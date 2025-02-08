@@ -4,6 +4,21 @@
     "appVersionSource": "remote"
   },
   "build": {
+    "build-and-test": {
+      "withoutCredentials": true,
+      "config": "build-and-test.yaml",
+      "android": {
+        "buildType": "apk",
+        "image": "latest"
+      },
+      "ios": {
+        "simulator": true,
+        "image": "latest"
+      },
+      "env": {
+        "APP_VARIANT": "development"
+      }
+    },
     "development": {
       "developmentClient": true,
       "distribution": "internal",

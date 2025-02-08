@@ -14,4 +14,5 @@ appId: com.betoatexpo.rncourseapp2 # Development build
 - assertVisible: "You don't have access"
 - tapOn: "Become an Admin"
 - assertVisible: "Hello Beto"
+- takeScreenshot: "screen"
 - killApp
