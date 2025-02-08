@@ -2,10 +2,9 @@ name: Hello World
 
 on:
   push:
-    branches: ["*"]
+    branches: ["fake-branch"]
 
 jobs:
   Hello World:
     steps:
-      - run: echo "Hello, World"
       - run: echo "Code with Beto! 🚀"

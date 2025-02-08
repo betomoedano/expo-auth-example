@@ -1,5 +1,5 @@
 # appId: host.exp.Exponent # This is the app ID for testing with Expo Go.
-appId: com.betoatexpo.rn-course-app-2 # Development build
+appId: com.betoatexpo.rncourseapp2 # Development build
 ---
 # Launch the app
 - launchApp

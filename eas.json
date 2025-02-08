@@ -13,9 +13,10 @@
       "channel": "development"
     },
     "simulator-ios": {
-      "extends": "development",
+      "withoutCredentials": true,
       "ios": {
-        "simulator": true
+        "simulator": true,
+        "image": "latest"
       }
     },
     "preview": {
