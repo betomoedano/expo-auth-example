@@ -8,7 +8,7 @@ appId: com.betoatexpo.rncourseapp2 # Development build
 - extendedWaitUntil:
     visible:
       id: "home"
-    timeout: 5000 # wait for 5 seconds
+    timeout: 15000 # wait for 15 seconds
 
 - tapOn: "Admin.*" # Admin tab
 - assertVisible: "You don't have access"

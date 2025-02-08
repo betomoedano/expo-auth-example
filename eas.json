@@ -19,6 +19,13 @@
         "image": "latest"
       }
     },
+    "emulator-android": {
+      "withoutCredentials": true,
+      "android": {
+        "buildType": "apk",
+        "image": "latest"
+      }
+    },
     "preview": {
       "distribution": "internal",
       "env": {

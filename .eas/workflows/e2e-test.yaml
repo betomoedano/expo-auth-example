@@ -10,10 +10,25 @@ jobs:
     params:
       platform: ios # required
       profile: simulator-ios # optional, default: production
+
   maestro_test:
     needs: [build_ios]
     type: maestro
     environment: production # optional, defaults to preview
     params:
       build_id: ${{ needs.build_ios.outputs.build_id }} # required
+      flow_path: ["./maestro/admin-flow.yaml"] # required
+
+  build_android:
+    type: build
+    params:
+      platform: android
+      profile: emulator-android
+
+  maestro_test_android:
+    needs: [build_android]
+    type: maestro
+    environment: production # optional, defaults to preview
+    params:
+      build_id: ${{ needs.build_android.outputs.build_id }} # required
       flow_path: ["./maestro/admin-flow.yaml"] # required
