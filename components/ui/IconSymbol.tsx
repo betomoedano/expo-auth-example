@@ -14,6 +14,10 @@ const MAPPING = {
   "chevron.left.forwardslash.chevron.right": "code",
   "chevron.right": "chevron-right",
   "move.3d": "more-vert",
+  message: "chat",
+  "square.2.layers.3d": "api",
+  lock: "lock",
+  person: "admin-panel-settings",
 } as Partial<
   Record<
     import("expo-symbols").SymbolViewProps["name"],
