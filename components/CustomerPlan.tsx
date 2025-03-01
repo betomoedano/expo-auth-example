@@ -1,4 +1,4 @@
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Button, Platform, Linking } from "react-native";
 import Purchases, { CustomerInfo } from "react-native-purchases";
 import { useEffect, useState } from "react";
 import { ThemedText } from "./ThemedText";
@@ -9,6 +9,22 @@ export function CustomerPlan() {
   useEffect(() => {
     Purchases.getCustomerInfo().then(setCustomerInfo);
   }, []);
+
+  const handleCancelSubscription = async () => {
+    try {
+      if (Platform.OS === "ios") {
+        // On iOS, direct users to Settings
+        Linking.openURL("app-settings:");
+      } else if (Platform.OS === "android") {
+        // On Android, open Play Store subscription settings
+        await Linking.openURL(
+          "https://play.google.com/store/account/subscriptions"
+        );
+      }
+    } catch (error) {
+      console.error("Error opening subscription settings:", error);
+    }
+  };
 
   if (!customerInfo) {
     return null;
@@ -28,6 +44,13 @@ export function CustomerPlan() {
                 Will Renew: {value.willRenew ? "Yes" : "No"}
               </ThemedText>
               <ThemedText>Period Type: {value.periodType}</ThemedText>
+              {key === "course_one_time_purchase" && value.willRenew && (
+                <Button
+                  title="Cancel Subscription"
+                  onPress={handleCancelSubscription}
+                  color="#ff4444"
+                />
+              )}
             </View>
           )
         )}
