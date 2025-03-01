@@ -4,6 +4,7 @@
 node_modules/
 
 CourseAppServiceAccount.json
+CourseAppCWBIAP.json
 
 # Expo
 .expo/
